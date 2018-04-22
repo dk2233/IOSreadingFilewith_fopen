@@ -20,7 +20,7 @@
     
     printf(" std lib ??? \n");
     FILE *file;
-    char * tab=NULL;
+    char *tab = "empty";
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"LICENSE" ofType:NULL];
     printf(" file Path %s \n ",[filePath UTF8String]);
@@ -38,15 +38,13 @@
         
         printf(" I read %ld bytes \n",len);
         fclose(file);
+        //NSLog(@"%@",[NSString stringWithCString:tab encoding:NSASCIIStringEncoding ] );
+        
+        
     
     }
-    //self.window.rootViewController.view.inputViewController
-    
-    NSLog(@"%@",[NSString stringWithCString:tab encoding:NSASCIIStringEncoding ] );
-    
     [self.window.rootViewController setValue:[NSString stringWithCString:tab encoding:NSASCIIStringEncoding ] forKey:@"DataFromFile"];
     
-    //[self.window.rootViewController setValue:@"abbbb" forKey:@"DataFromFile"];
     
     return YES;
 }
